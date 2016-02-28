@@ -6,10 +6,30 @@
 p, h1, h2, h3, h4, h5{
   font-family: raleway;
 }
-.container-fluid {
-  padding: 0px 15px;
+h2 {
+  float: left;
+  padding-right: 3em;
+  display: inline-block;
+  font-weight: bold;
+  border-bottom: 5px solid #24ba9f;
+  margin-bottom: 0.5em;
 }
-
+@media (max-width: 500px) {
+    h2 {
+      font-size: 1.5em;
+    }
+}
+#gibBorder h2 {
+  float: none;
+}
+.additionalRow:nth-child(3) h2 {
+  float: right;
+  padding-right: 0px;
+  padding-left: 3em;
+}
+.row {
+  padding: 1em 15px;
+}
 /* ---------------------- */
 /*        Top menu        */
 /* ---------------------- */
@@ -18,13 +38,40 @@ p, h1, h2, h3, h4, h5{
   background-color: black;
   font-size: 0.7em;
   color: white;
-
+  span {
+    font-weight: bold;
+    color: $myGreen;
+  }
   nav, div {
     text-align: center;
     padding: 0.3em;
   }
-}
+  .hoverList {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 300%;
+    visibility: hidden;
+    z-index: 1000;
 
+    img {
+      margin-left: -20px;
+      margin-top: 10px;
+    }
+
+    li {
+      color: white;
+      background-color: black;
+      border-top: 5px solid black;
+      border-bottom: 5px solid black;
+    }
+  }
+
+  nav:hover .hoverList {
+    visibility: visible;
+  }
+}
 /* ---------------------- */
 /*        Slider          */
 /* ---------------------- */
@@ -43,12 +90,22 @@ p, h1, h2, h3, h4, h5{
     top: 50%;
     left: 10%;
     transform: translate(-50%, -50%);
+    z-index: 1000;
 
     &:nth-child(5) {
       left: 90%;
     }
   }
-
+  button {
+    background-color: rgb(36, 186, 159);
+    border: 0px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    margin: 0.5em;
+  }
   div {
     text-align: center;
   }
@@ -70,7 +127,7 @@ p, h1, h2, h3, h4, h5{
 }
 
 .active {
-  display: inline-block;
+  display: inline;
 }
 
 @media (min-width: 768px) {
@@ -92,6 +149,7 @@ p, h1, h2, h3, h4, h5{
 /*        Third row          */
 /* ---------------------- */
 .row:nth-child(3) {
+  padding-top: 2em;
   padding-bottom: 2em;
 }
 .row:nth-child(3) h3 {
@@ -120,8 +178,14 @@ p, h1, h2, h3, h4, h5{
 
 #gibBorder {
   height: 100%;
-  border: 1px solid grey;
+  border: 2px solid $midGrey;
   margin-right: 0px;
+  p {
+    padding: 5px;
+  }
+  h2 {
+    margin: 5px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -206,7 +270,7 @@ p, h1, h2, h3, h4, h5{
       color: $myGreen;
     }
     ul {
-      margin-bottom: 3em;
+      margin-bottom: 4em;
     }
     li {
       color: grey;
@@ -232,7 +296,8 @@ p, h1, h2, h3, h4, h5{
       transform: translateX(-50%);
       background-color: $myGreen;
       color: white;
-      border-radius: 30px;
+      border-radius: 5px;
+      border: 7px solid $myGreen;
     }
   }
   .offert:nth-child(3) {
@@ -305,8 +370,8 @@ p, h1, h2, h3, h4, h5{
     	height: 25px;
     	width: 25px;
     	position: absolute;
-    	top: 50%;
-    	right: 10%;
+    	top: 40%;
+    	right: 3%;
     	transform: translateY(-50%);
     	background-image: url("images/triangle2.png");
     	background-size: contain;
@@ -460,6 +525,9 @@ p, h1, h2, h3, h4, h5{
       .additionalRow:first-child {
         width: 100%;
       }
+      .additionalRow:nth-child(2) {
+        margin-top: 6em;
+      }
       #pickContainer {
         margin: 0px;
         width: 80%;
@@ -476,6 +544,7 @@ p, h1, h2, h3, h4, h5{
         float: right;
         clear: right;
         margin-top: 0px;
+        font-size: 1.2em;
       }
       #yourChair {
         border: 2px solid $midGrey;
@@ -485,9 +554,6 @@ p, h1, h2, h3, h4, h5{
 }
 @media (max-width: 500px) {
   .row:nth-child(4) {
-    h2 {
-      font-size: 1.5em;
-    }
     .table {
       display: inline-block;
     }

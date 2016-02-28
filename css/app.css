@@ -4,8 +4,27 @@
 p, h1, h2, h3, h4, h5 {
   font-family: raleway; }
 
-.container-fluid {
-  padding: 0px 15px; }
+h2 {
+  float: left;
+  padding-right: 3em;
+  display: inline-block;
+  font-weight: bold;
+  border-bottom: 5px solid #24ba9f;
+  margin-bottom: 0.5em; }
+
+@media (max-width: 500px) {
+  h2 {
+    font-size: 1.5em; } }
+#gibBorder h2 {
+  float: none; }
+
+.additionalRow:nth-child(3) h2 {
+  float: right;
+  padding-right: 0px;
+  padding-left: 3em; }
+
+.row {
+  padding: 1em 15px; }
 
 /* ---------------------- */
 /*        Top menu        */
@@ -14,9 +33,30 @@ p, h1, h2, h3, h4, h5 {
   background-color: black;
   font-size: 0.7em;
   color: white; }
+  #topMenu span {
+    font-weight: bold;
+    color: #24ba9f; }
   #topMenu nav, #topMenu div {
     text-align: center;
     padding: 0.3em; }
+  #topMenu .hoverList {
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: 100%;
+    height: 300%;
+    visibility: hidden;
+    z-index: 1000; }
+    #topMenu .hoverList img {
+      margin-left: -20px;
+      margin-top: 10px; }
+    #topMenu .hoverList li {
+      color: white;
+      background-color: black;
+      border-top: 5px solid black;
+      border-bottom: 5px solid black; }
+  #topMenu nav:hover .hoverList {
+    visibility: visible; }
 
 /* ---------------------- */
 /*        Slider          */
@@ -33,9 +73,19 @@ p, h1, h2, h3, h4, h5 {
     position: absolute;
     top: 50%;
     left: 10%;
-    transform: translate(-50%, -50%); }
+    transform: translate(-50%, -50%);
+    z-index: 1000; }
     #slider nav:nth-child(5) {
       left: 90%; }
+  #slider button {
+    background-color: #24ba9f;
+    border: 0px;
+    padding: 5px;
+    color: white;
+    border-radius: 5px;
+    width: 300px;
+    height: auto;
+    margin: 0.5em; }
   #slider div {
     text-align: center; }
   #slider nav p {
@@ -50,7 +100,7 @@ p, h1, h2, h3, h4, h5 {
     display: inline; }
 
 .active {
-  display: inline-block; }
+  display: inline; }
 
 @media (min-width: 768px) {
   #slider div {
@@ -64,6 +114,7 @@ p, h1, h2, h3, h4, h5 {
 /*        Third row          */
 /* ---------------------- */
 .row:nth-child(3) {
+  padding-top: 2em;
   padding-bottom: 2em; }
 
 .row:nth-child(3) h3 {
@@ -86,8 +137,12 @@ p, h1, h2, h3, h4, h5 {
 
 #gibBorder {
   height: 100%;
-  border: 1px solid grey;
+  border: 2px solid #f1f1f1;
   margin-right: 0px; }
+  #gibBorder p {
+    padding: 5px; }
+  #gibBorder h2 {
+    margin: 5px; }
 
 @media (max-width: 768px) {
   .row:nth-child(3) {
@@ -152,7 +207,7 @@ p, h1, h2, h3, h4, h5 {
       margin-top: 2em;
       color: #24ba9f; }
     .row:nth-child(4) .offert ul {
-      margin-bottom: 3em; }
+      margin-bottom: 4em; }
     .row:nth-child(4) .offert li {
       color: grey; }
     .row:nth-child(4) .offert li:nth-child(even) {
@@ -173,7 +228,8 @@ p, h1, h2, h3, h4, h5 {
       transform: translateX(-50%);
       background-color: #24ba9f;
       color: white;
-      border-radius: 30px; }
+      border-radius: 5px;
+      border: 7px solid #24ba9f; }
   .row:nth-child(4) .offert:nth-child(3) {
     margin: 0px 1.5%; }
   .row:nth-child(4) .outerCircle {
@@ -234,8 +290,8 @@ p, h1, h2, h3, h4, h5 {
       height: 25px;
       width: 25px;
       position: absolute;
-      top: 50%;
-      right: 10%;
+      top: 40%;
+      right: 3%;
       transform: translateY(-50%);
       background-image: url("images/triangle2.png");
       background-size: contain;
@@ -363,6 +419,8 @@ p, h1, h2, h3, h4, h5 {
     width: 50%; }
   .row:nth-child(4) .row .additionalRow:first-child {
     width: 100%; }
+  .row:nth-child(4) .row .additionalRow:nth-child(2) {
+    margin-top: 6em; }
   .row:nth-child(4) .row #pickContainer {
     margin: 0px;
     width: 80%; }
@@ -375,12 +433,11 @@ p, h1, h2, h3, h4, h5 {
   .row:nth-child(4) .row #transportP {
     float: right;
     clear: right;
-    margin-top: 0px; }
+    margin-top: 0px;
+    font-size: 1.2em; }
   .row:nth-child(4) .row #yourChair {
     border: 2px solid #f1f1f1; } }
 @media (max-width: 500px) {
-  .row:nth-child(4) h2 {
-    font-size: 1.5em; }
   .row:nth-child(4) .table {
     display: inline-block; }
   .row:nth-child(4) .cell {
