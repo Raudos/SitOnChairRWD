@@ -88,12 +88,12 @@ h2 {
     display: inline-block;
     position: absolute;
     top: 50%;
-    left: 10%;
+    left: 3%;
     transform: translate(-50%, -50%);
     z-index: 1000;
 
     &:nth-child(5) {
-      left: 90%;
+      left: 97%;
     }
   }
   button {
@@ -102,8 +102,8 @@ h2 {
     padding: 5px;
     color: white;
     border-radius: 5px;
+    max-width: 100%;
     width: 300px;
-    height: auto;
     margin: 0.5em;
   }
   div {
@@ -164,6 +164,7 @@ h2 {
   img {
     padding: 1em;
     padding-left: 0px;
+    width: 100%;
   }
   div {
     height: 50%;
@@ -288,6 +289,20 @@ h2 {
       border: 2px solid $darkGrey;
       border-radius: 50%;
       margin: 1em auto;
+      div {
+        position: relative;
+        top: 50%;
+        transform: translateY(-50%);
+        p {
+          color: grey;
+        }
+        p:first-child {
+          font-size: 2em;
+        }
+        p:nth-child(2) {
+          font-size: 1.3em;
+        }
+      }
     }
     button {
       position: absolute;
@@ -443,7 +458,6 @@ h2 {
     }
     #names p:not(:first-child) {
     	color: black;
-    	font-size: 26px;
     	clear: left;
     	margin-left: 10px;
     	margin-top: 10px;
@@ -470,7 +484,6 @@ h2 {
     }
     #names p:first-child, #prices p {
     	color: #24BA9F;
-    	font-size: 26px;
     	clear: left;
     	margin-left: 10px;
     	margin-top: 10px;
@@ -514,19 +527,23 @@ h2 {
     	height: 20%;
     	clear: left;
     }
+    #names p, #prices p {
+      font-size: 2em;
+    }
   }
 }
 @media (max-width: 720px) {
   .row:nth-child(4) {
     .row {
-      .additionalRow {
-        width: 50%;
-      }
       .additionalRow:first-child {
         width: 100%;
       }
       .additionalRow:nth-child(2) {
         margin-top: 6em;
+        width: 35%;
+      }
+      .additionalRow:nth-child(3) {
+        width: 65%;
       }
       #pickContainer {
         margin: 0px;
@@ -554,6 +571,11 @@ h2 {
 }
 @media (max-width: 500px) {
   .row:nth-child(4) {
+    .row {
+      #names p, #prices p {
+        font-size: 1.6em;
+      }
+    }
     .table {
       display: inline-block;
     }
@@ -572,6 +594,18 @@ h2 {
         .innerCircle {
           width: 2.5em;
           height: 2.5em;
+        }
+        &:hover {
+          background-color: $myGreen;
+        }
+        &:hover .innerCircle {
+          background-color: white;
+        }
+      }
+      .circled {
+        background-color: $myGreen;
+        .innerCircle {
+          background-color: white;
         }
       }
       .outerCircle:nth-child(1) {
@@ -716,6 +750,7 @@ textarea {
   img {
     padding: 5px;
     float: left;
+    width: 25%;
   }
   div:nth-child(2) p {
     display: inline-block;

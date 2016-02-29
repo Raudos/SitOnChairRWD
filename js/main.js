@@ -94,12 +94,42 @@ var main = function() {
 	});
 
 }
+function checkPosition() {
+	if (window.matchMedia('(max-width: 500px)').matches) {
+		$(".outerCircle").on("click", function(event) {
+			var $target = $(event.target);
+			if ($target.hasClass("circled") || $target.parent().hasClass("circled")) {
+				// Do nothing
+			} else if ($target.is(".outerCircle:first-child") || $target.parent().is(".outerCircle:first-child")) {
+				var circle = ".outerCircle:first-child";
+				var offert = ".offert:first-child";
+				selectors(circle, offert);
+			} else if ($target.is(".outerCircle:nth-child(2)") || $target.parent().is(".outerCircle:nth-child(2)")) {
+				var circle = ".outerCircle:nth-child(2)";
+				var offert = ".offert:nth-child(3)";
+				selectors(circle, offert);
+			} else if ($target.is(".outerCircle:nth-child(3)") || $target.parent().is(".outerCircle:nth-child(3)")) {
+				var circle = ".outerCircle:nth-child(3)";
+				var offert = ".offert:nth-child(5)";
+				selectors(circle, offert);
+			}
+		})
+		function selectors(circle, offert) {
+			var $currentCircle = $(".circled");
+			$currentCircle.removeClass("circled");
+			$(circle).addClass("circled");
+			$(".visible").removeClass("visible");
+			$(offert).addClass("visible");
+		}
 
+	}
+}
 
 $(document).ready(function() {
 	$('input[type=checkbox]').prop('checked', true);
 	$summary.html(summary());
 	main();
+	checkPosition();
 })
 
 function summary() {
