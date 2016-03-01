@@ -114,6 +114,9 @@ h2 {
     color: $myGreen;
     font-size: 5.5em;
   }
+  .centerMe {
+    padding: 1em;
+  }
 }
 
 .chairDiv {
@@ -266,6 +269,18 @@ h2 {
     border: 2px solid $darkGrey;
     position: relative;
     text-align: center;
+    &:hover {
+      border: 2px solid $myGreen;
+    }
+    @media (min-width: 500px) {
+      &:hover .outerCircle {
+        background-color: $myGreen;
+        border: $myGreen;
+      }
+      &:hover .innerCircle {
+        background-color: white;
+      }
+    }
     h3 {
       margin-top: 2em;
       color: $myGreen;
@@ -340,9 +355,7 @@ h2 {
       border-radius: 50%;
     }
   }
-  .outerCircle:not(.active) {
-    display: none;
-  }
+
   .row {
     padding-top: 5em;
     .additionalRow {
@@ -547,10 +560,10 @@ h2 {
       }
       #pickContainer {
         margin: 0px;
-        width: 80%;
+        width: 70%;
       }
       #checkbox {
-        width: 19%;
+        width: 29%;
         float: left;
       }
       #transportLabel {

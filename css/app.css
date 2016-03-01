@@ -91,6 +91,8 @@ h2 {
   #slider nav p {
     color: #24ba9f;
     font-size: 5.5em; }
+  #slider .centerMe {
+    padding: 1em; }
 
 .chairDiv {
   display: none;
@@ -204,6 +206,14 @@ h2 {
     border: 2px solid #e4e4e4;
     position: relative;
     text-align: center; }
+    .row:nth-child(4) .offert:hover {
+      border: 2px solid #24ba9f; }
+    @media (min-width: 500px) {
+      .row:nth-child(4) .offert:hover .outerCircle {
+        background-color: #24ba9f;
+        border: #24ba9f; }
+      .row:nth-child(4) .offert:hover .innerCircle {
+        background-color: white; } }
     .row:nth-child(4) .offert h3 {
       margin-top: 2em;
       color: #24ba9f; }
@@ -263,8 +273,6 @@ h2 {
       height: 1.5em;
       background-color: #e4e4e4;
       border-radius: 50%; }
-  .row:nth-child(4) .outerCircle:not(.active) {
-    display: none; }
   .row:nth-child(4) .row {
     padding-top: 5em; }
     .row:nth-child(4) .row .additionalRow {
@@ -435,9 +443,9 @@ h2 {
     width: 65%; }
   .row:nth-child(4) .row #pickContainer {
     margin: 0px;
-    width: 80%; }
+    width: 70%; }
   .row:nth-child(4) .row #checkbox {
-    width: 19%;
+    width: 29%;
     float: left; }
   .row:nth-child(4) .row #transportLabel {
     margin-top: 0px;
